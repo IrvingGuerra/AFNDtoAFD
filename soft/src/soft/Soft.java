@@ -116,8 +116,65 @@ public class Soft {
                                 arrayCuando1[q] += arrayCuando1[index]+",";
                             }
                         }
-                        arrayCuando0[q] = arrayCuando0[q].substring(0, arrayCuando0[q].length()-1); 
-                        arrayCuando1[q] = arrayCuando1[q].substring(0, arrayCuando1[q].length()-1); 
+                        
+                        System.out.println(arrayCuando0[q]);
+                        System.out.println(arrayCuando1[q]);
+                      
+                        //Eliminamos todas las comas
+                        
+                        arrayCuando0[q] = arrayCuando0[q].replaceAll(",", "");
+                        arrayCuando1[q] = arrayCuando1[q].replaceAll(",", "");
+                        
+                        System.out.println(arrayCuando0[q]);
+                        System.out.println(arrayCuando1[q]);
+                        
+                        //Convertimos en arreglo
+                        
+                        String[] letras0 = arrayCuando0[q].split("");
+                        Arrays.sort(letras0);
+                        String[] letras1 = arrayCuando1[q].split("");
+                        Arrays.sort(letras1);
+                        
+                        String nueva0 = "";
+                        for(int j = 0 ; j<letras0.length ; j++){
+                            nueva0 += letras0[j];
+                        }
+                        String nueva1 = "";
+                        for(int j = 0 ; j<letras1.length ; j++){
+                            nueva1 += letras1[j];
+                        }
+                        
+                        System.out.println(nueva0);
+                        System.out.println(nueva1);
+                        
+                        //Eliminamos repetidos
+                        
+                        nueva0 = nueva0.replaceAll("(.)\\1", "$1");
+                        nueva1 = nueva1.replaceAll("(.)\\1", "$1");
+                        
+                        //Agregamos comas entre caracteres
+                        
+                        letras0 = nueva0.split("");
+                        
+                        letras1 = nueva1.split("");
+                        
+                        String nuevaC0 = "";
+                        for(int j = 0 ; j<letras0.length ; j++){
+                            nuevaC0 += letras0[j]+",";
+                        }
+                        String nuevaC1 = "";
+                        for(int j = 0 ; j<letras1.length ; j++){
+                            nuevaC1 += letras1[j]+",";
+                        }
+       
+          
+                        nuevaC0 = nuevaC0.substring(0, nuevaC0.length()-1); 
+                        nuevaC1 = nuevaC1.substring(0, nuevaC1.length()-1); 
+                        
+                        arrayCuando0[q] = nuevaC0;
+                        arrayCuando1[q] = nuevaC1;
+                        
+                        
                         aux++;
                         System.out.println(arrayCuando0[q]);
                         System.out.println(arrayCuando1[q]);
@@ -149,12 +206,68 @@ public class Soft {
                                 arrayCuando1[q] += arrayCuando1[index]+",";
                             }
                         }
-                        arrayCuando0[q] = arrayCuando0[q].substring(0, arrayCuando0[q].length()-1); 
-                        arrayCuando1[q] = arrayCuando1[q].substring(0, arrayCuando1[q].length()-1); 
+                        
+                        System.out.println(arrayCuando0[q]);
+                        System.out.println(arrayCuando1[q]);
+                      
+                        //Eliminamos todas las comas
+                        
+                        arrayCuando0[q] = arrayCuando0[q].replaceAll(",", "");
+                        arrayCuando1[q] = arrayCuando1[q].replaceAll(",", "");
+                        
+                        System.out.println(arrayCuando0[q]);
+                        System.out.println(arrayCuando1[q]);
+                        
+                        //Convertimos en arreglo
+                        
+                        String[] letras0 = arrayCuando0[q].split("");
+                        Arrays.sort(letras0);
+                        String[] letras1 = arrayCuando1[q].split("");
+                        Arrays.sort(letras1);
+                        
+                        String nueva0 = "";
+                        for(int j = 0 ; j<letras0.length ; j++){
+                            nueva0 += letras0[j];
+                        }
+                        String nueva1 = "";
+                        for(int j = 0 ; j<letras1.length ; j++){
+                            nueva1 += letras1[j];
+                        }
+                        
+                        System.out.println(nueva0);
+                        System.out.println(nueva1);
+                        
+                        //Eliminamos repetidos
+                        
+                        nueva0 = nueva0.replaceAll("(.)\\1", "$1");
+                        nueva1 = nueva1.replaceAll("(.)\\1", "$1");
+                        
+                        //Agregamos comas entre caracteres
+                        
+                        letras0 = nueva0.split("");
+                        
+                        letras1 = nueva1.split("");
+                        
+                        String nuevaC0 = "";
+                        for(int j = 0 ; j<letras0.length ; j++){
+                            nuevaC0 += letras0[j]+",";
+                        }
+                        String nuevaC1 = "";
+                        for(int j = 0 ; j<letras1.length ; j++){
+                            nuevaC1 += letras1[j]+",";
+                        }
+       
+          
+                        nuevaC0 = nuevaC0.substring(0, nuevaC0.length()-1); 
+                        nuevaC1 = nuevaC1.substring(0, nuevaC1.length()-1); 
+                        
+                        arrayCuando0[q] = nuevaC0;
+                        arrayCuando1[q] = nuevaC1;
+                        
                         aux++;
                         System.out.println(arrayCuando0[q]);
                         System.out.println(arrayCuando1[q]);
-                       
+
                         String cadena = "{"+ arrayEstados[q]+"}|{"+arrayCuando0[q]+"}|{"+arrayCuando1[q]+"}-\n";
                         fos.write(cadena.getBytes());
                     }
